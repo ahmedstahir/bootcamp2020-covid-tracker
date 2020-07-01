@@ -1,17 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { GlobalProvider } from './context/GlobalState'
+import HeaderBar from './components/HeaderBar'
+import MainBody from './components/MainBody'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Scaffolding completed and ready to begin the project.
-        </p>
-      </header>
-    </div>
+    return (
+        <GlobalProvider>
+            <>
+                <HeaderBar />
+                <MainBody />
+            </>
+        </GlobalProvider>
   );
 }
 
