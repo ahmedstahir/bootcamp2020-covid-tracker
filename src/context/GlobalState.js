@@ -4,7 +4,8 @@ import AppReducer from './AppReducer'
 const initialState = {
     isDataLoading: false,
     globalStatsSummary: null,
-    countriesList: []
+    countriesList: [],
+    selectedCountry: null
 }
 
 //Create and export Context
@@ -36,13 +37,22 @@ export const GlobalProvider = ({ children }) => {
         });
     }
 
+    function setSelectedCountry(country) {
+        dispatch({
+            type: 'SET_SELECTED_COUNTRY',
+            payload: country
+        });
+    }
+
     return (<GlobalContext.Provider value={{
         isDataLoading: state.isDataLoading,
         globalStatsSummary: state.globalStatsSummary,
         countriesList: state.countriesList,
+        selectedCountry: state.selectedCountry,
         setDataLoading,
         setGlobalStatsSummary,
-        setCountriesList
+        setCountriesList,
+        setSelectedCountry
     }}>
         {children}
     </GlobalContext.Provider>);

@@ -15,6 +15,11 @@ export default (state, action) => {
                 ...state,
                 countriesList: action.payload
             }
+        case 'SET_SELECTED_COUNTRY':
+            return {
+                ...state,
+                selectedCountry: action.payload
+            }
         default:
             return state;
     }

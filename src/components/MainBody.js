@@ -6,6 +6,7 @@ import { GlobalContext } from '../context/GlobalState';
 import Divider from '@material-ui/core/Divider';
 
 import SummarizedFigures from './SummarizedFigures'
+import CountryDropdown from './CountryDropdown'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,10 +45,12 @@ export default function MainBody() {
   return (
       <div className={classes.root}>
           {!isDataLoading && <Grid container spacing={3}>
-              <Grid item xs={3}>
-                  <SummarizedFigures />
+              <Grid item xs={3} style={{ backgroundColor: '#f7f7f7' }}>
+                  <CountryDropdown />
                   <br />
                   <Divider variant="middle" />
+                  <br />
+                  <SummarizedFigures />
               </Grid>
               <Grid item xs={9}>
                   <Paper className={classes.paper}>xs</Paper>

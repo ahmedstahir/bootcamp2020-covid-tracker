@@ -2,16 +2,19 @@ import React from 'react';
 import { GlobalProvider } from './context/GlobalState'
 import BackdropLoader from './components/BackdropLoader';
 import HeaderBar from './components/HeaderBar'
+import Grid from '@material-ui/core/Grid';
 import MainBody from './components/MainBody'
-import Ahmed from './components/Ahmed'
 
 function App() {
     return (
         <GlobalProvider>
             <BackdropLoader />
-            <HeaderBar />
-            <MainBody />
-            <Ahmed />
+            <Grid container spacing={0}>
+                <Grid item xs={12}>
+                    <HeaderBar />
+                    <MainBody />
+                </Grid>
+            </Grid>
         </GlobalProvider>
   );
 }
