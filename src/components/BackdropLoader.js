@@ -12,12 +12,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function BackdropLoader() {
-    const { showLoader } = useContext(GlobalContext);
+    const { isDataLoading } = useContext(GlobalContext);
     const classes = useStyles();
 
     return (
     <div>
-            <Backdrop className={classes.backdrop} open={showLoader}>
+        <Backdrop className={classes.backdrop} open={isDataLoading}>
             <CircularProgress color="inherit" />
         </Backdrop>
     </div>

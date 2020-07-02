@@ -1,15 +1,20 @@
 export default (state, action) => {
     switch (action.type) {
-        case 'SET_LOADER_FLAG':
+        case 'SET_DATA_LOADING':
             return {
                 ...state,
-                showLoader: action.payload
+                isDataLoading: action.payload
             }
-        //case 'ADD_TRANSACTION':
-        //    return {
-        //        ...state,
-        //        transactions: [action.payload, ...state.transactions]
-        //    }
+        case 'SET_GLOBAL_STATS_SUMMARY':
+            return {
+                ...state,
+                globalStatsSummary: action.payload
+            }
+        case 'SET_COUNTRIES_LIST':
+            return {
+                ...state,
+                countriesList: action.payload
+            }
         default:
             return state;
     }

@@ -2,8 +2,9 @@ import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer'
 
 const initialState = {
-    data: [],
-    showLoader: false
+    isDataLoading: false,
+    globalStatsSummary: null,
+    countriesList: []
 }
 
 //Create and export Context
@@ -14,25 +15,34 @@ export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
     //Actions
-    function setLoader(flag) {
+    function setDataLoading(flag) {
         dispatch({
-            type: 'SET_LOADER_FLAG',
+            type: 'SET_DATA_LOADING',
             payload: flag
         });
     }
 
-    //function addTransaction(transaction) {
-    //    dispatch({
-    //        type: 'ADD_TRANSACTION',
-    //        payload: transaction
-    //    });
-    //}
+    function setGlobalStatsSummary(summary) {
+        dispatch({
+            type: 'SET_GLOBAL_STATS_SUMMARY',
+            payload: summary
+        });
+    }
+
+    function setCountriesList(countries) {
+        dispatch({
+            type: 'SET_COUNTRIES_LIST',
+            payload: countries
+        });
+    }
 
     return (<GlobalContext.Provider value={{
-        data: state.data,
-        showLoader: state.showLoader,
-        setLoader,
-        //addTransaction
+        isDataLoading: state.isDataLoading,
+        globalStatsSummary: state.globalStatsSummary,
+        countriesList: state.countriesList,
+        setDataLoading,
+        setGlobalStatsSummary,
+        setCountriesList
     }}>
         {children}
     </GlobalContext.Provider>);
