@@ -9,7 +9,7 @@ function App() {
     return (
         <GlobalProvider>
             <BackdropLoader />
-            <Grid container spacing={0}>
+            <Grid container spacing={0} xs={12}>
                 <Grid item xs={12}>
                     <HeaderBar />
                     <MainBody />

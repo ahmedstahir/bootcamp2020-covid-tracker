@@ -15,6 +15,7 @@ import blackCircle from '../images/black-circle.png';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
+import CountUp from 'react-countup';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -70,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function RecipeReviewCard() {
+export default function SummarizedFigures() {
     const { globalStatsSummary, selectedCountry } = useContext(GlobalContext);
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
@@ -104,12 +105,12 @@ export default function RecipeReviewCard() {
                     Total confirmed cases
                 </Typography>
                 <Typography variant="h4" className={classes.totalCases}>
-                    <NumberFormat value={confirmedCases} displayType={'text'} thousandSeparator={true} />
+                    <CountUp start={0} end={confirmedCases} duration={1.5} separator="," />
                 </Typography>
                 <Grid container spacing={0}>
                     <Grid item xs={6}>
                         <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                            <img src={orangeDot} className={classes.dotImage} alt="Active cases" />&nbsp;&nbsp;Active cases
+                            <img src={orangeDot} className={classes.dotImage} alt="Active cases" />{'  '} Active cases
                         </Typography>
                     </Grid>
                     <Grid item xs={6}>
@@ -121,7 +122,7 @@ export default function RecipeReviewCard() {
                 <Grid container spacing={0}>
                     <Grid item xs={6}>
                         <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                            <img src={greenDot} className={classes.dotImage} alt="Recovered cases" />&nbsp;&nbsp;Recovered cases
+                            <img src={greenDot} className={classes.dotImage} alt="Recovered cases" />{'  '} Recovered cases
                         </Typography>
                     </Grid>
                     <Grid item xs={6}>
@@ -133,7 +134,7 @@ export default function RecipeReviewCard() {
                 <Grid container spacing={0}>
                     <Grid item xs={6}>
                         <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                            <img src={blackDot} className={classes.dotImage} alt="Fatal cases" />&nbsp;&nbsp;Fatal cases
+                            <img src={blackDot} className={classes.dotImage} alt="Fatal cases" />{'  '} Fatal cases
                         </Typography>
                     </Grid>
                     <Grid item xs={6}>
@@ -145,7 +146,7 @@ export default function RecipeReviewCard() {
                 <Grid container spacing={0}>
                     <Grid item xs={6}>
                         <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                            <img src={redDot} className={classes.dotImage} alt="Critical cases" />&nbsp;&nbsp;Critical cases
+                            <img src={redDot} className={classes.dotImage} alt="Critical cases" />{'  '} Critical cases
                         </Typography>
                     </Grid>
                     <Grid item xs={6}>
@@ -178,7 +179,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={orangeDot} className={classes.dotImage} alt="New cases" />&nbsp;&nbsp;New cases
+                                <img src={orangeDot} className={classes.dotImage} alt="New cases" />{'  '} New cases
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -190,7 +191,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={greenDot} className={classes.dotImage} alt="Recovered cases" />&nbsp;&nbsp;Recovered cases
+                                <img src={greenDot} className={classes.dotImage} alt="Recovered cases" />{'  '} Recovered cases
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -202,7 +203,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={blackDot} className={classes.dotImage} alt="Fatal cases" />&nbsp;&nbsp;Fatal cases
+                                <img src={blackDot} className={classes.dotImage} alt="Fatal cases" />{'  '} Fatal cases
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -218,7 +219,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={blackCircle} className={classes.dotImage} alt="Total tests" />&nbsp;&nbsp;Total tests
+                                <img src={blackCircle} className={classes.dotImage} alt="Total tests" />{'  '} Total tests
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -230,7 +231,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={blackCircle} className={classes.dotImage} alt="Total population" />&nbsp;&nbsp;Total population
+                                <img src={blackCircle} className={classes.dotImage} alt="Total population" />{'  '} Total population
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -246,7 +247,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={blackCircle} className={classes.dotImage} alt="Tests" />&nbsp;&nbsp;Tests
+                                <img src={blackCircle} className={classes.dotImage} alt="Tests" />{'  '} Tests
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -258,7 +259,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={blackCircle} className={classes.dotImage} alt="Confirmed cases" />&nbsp;&nbsp;Confirmed cases
+                                <img src={blackCircle} className={classes.dotImage} alt="Confirmed cases" />{'  '} Confirmed cases
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -270,7 +271,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={orangeDot} className={classes.dotImage} alt="Active cases" />&nbsp;&nbsp;Active cases
+                                <img src={orangeDot} className={classes.dotImage} alt="Active cases" />{'  '} Active cases
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -282,7 +283,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={greenDot} className={classes.dotImage} alt="Recovered cases" />&nbsp;&nbsp;Recovered cases
+                                <img src={greenDot} className={classes.dotImage} alt="Recovered cases" />{'  '} Recovered cases
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -294,7 +295,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={blackDot} className={classes.dotImage} alt="Fatal cases" />&nbsp;&nbsp;Fatal cases
+                                <img src={blackDot} className={classes.dotImage} alt="Fatal cases" />{'  '} Fatal cases
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>
@@ -306,7 +307,7 @@ export default function RecipeReviewCard() {
                     <Grid container spacing={0}>
                         <Grid item xs={6}>
                             <Typography variant="subtitle2" style={{ fontWeight: 'bold', paddingLeft: '5px' }}>
-                                <img src={redDot} className={classes.dotImage} alt="Critical cases" />&nbsp;&nbsp;Critical cases
+                                <img src={redDot} className={classes.dotImage} alt="Critical cases" />{'  '} Critical cases
                         </Typography>
                         </Grid>
                         <Grid item xs={6}>

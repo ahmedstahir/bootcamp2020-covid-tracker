@@ -28,7 +28,7 @@ export default function CountryDropdown() {
     return (
         <Autocomplete
             id="country-select-demo"
-            style={{ width: 300, marginLeft: '10px', marginRight: '10px', backgroundColor: 'white' }}
+            style={{ width: 300, backgroundColor: 'white', marginTop: '10px' }}
             options={countriesList}
             onChange={onCountryChange}
             classes={{

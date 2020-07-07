@@ -1,20 +1,20 @@
 import React, { useEffect, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { GlobalContext } from '../context/GlobalState';
 import Divider from '@material-ui/core/Divider';
 
 import SummarizedFigures from './SummarizedFigures'
 import CountryDropdown from './CountryDropdown'
+import VisualDetails from './VisualDetails'
 
 const useStyles = makeStyles((theme) => ({
   root: {
         flexGrow: 1,
-        marginTop: theme.spacing(2),
+        marginTop: theme.spacing(1),
   },
   paper: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(10),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
@@ -37,23 +37,26 @@ export default function MainBody() {
             setCountriesList(countriesList);
 
             setDataLoading(false);
-        }, 2000);
+        }, 1500);
     }
 
     useEffect(fetchDataFromApi, []);
 
   return (
       <div className={classes.root}>
-          {!isDataLoading && <Grid container spacing={3}>
-              <Grid item xs={3} style={{ backgroundColor: '#f7f7f7' }}>
-                  <CountryDropdown />
+          {!isDataLoading && <Grid container spacing={0} xs={12}>
+              <Grid item xs={3} style={{ backgroundColor: '#f0f0f0' }}>
+                  <div style={{ marginLeft: '20px' }}>
+                      <CountryDropdown /></div>
                   <br />
-                  <Divider variant="middle" />
+                  <div>
+                      <Divider variant="middle" /></div>
                   <br />
-                  <SummarizedFigures />
+                  <div>
+                      <SummarizedFigures /></div>
               </Grid>
-              <Grid item xs={9}>
-                  <Paper className={classes.paper}>xs</Paper>
+              <Grid item xs={9} style={{ padding: '1px' }}>
+                  <VisualDetails />
               </Grid>
           </Grid>}
       </div>
