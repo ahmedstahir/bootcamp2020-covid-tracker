@@ -24,7 +24,7 @@ export default function Map() {
     const { countriesList } = useContext(GlobalContext);
     const [clickedCountry, setClickedCountry] = useState(null);
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY
+        googleMapsApiKey: "AIzaSyB5qcGAYbWx7fvNg9EfDZHAqdHJrRpzfqs"
     });
 
     const mapRef = useRef();
