@@ -51,15 +51,15 @@ export default function HeaderBar() {
 
     return (
         <ThemeProvider theme={theme}>
-        <div className={classes.root}>
-            <AppBar position="static">
+            <div className={classes.root}>
+                <AppBar position="static">
                     <Toolbar variant="regular">
                         <img src={virus} className={classes.virusImage} alt="Virus" />
-                    <Typography variant="h4" color="inherit">
-                        <strong>COVID-19 Tracker</strong>
-          </Typography>
-                </Toolbar>
-            </AppBar>
+                        <Typography variant="h4" color="inherit">
+                            <strong>COVID-19 Tracker</strong>
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
             </div>
         </ThemeProvider>
     );

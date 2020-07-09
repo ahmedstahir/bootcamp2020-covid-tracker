@@ -45,7 +45,7 @@ export default function MainBody() {
   return (
       <div className={classes.root}>
           {!isDataLoading && <Grid container spacing={0} xs={12}>
-              <Grid item xs={3} style={{ backgroundColor: '#f0f0f0' }}>
+              <Grid item xs={3} style={{ backgroundColor: '#f0f0f0', height: '81vh' }}>
                   <div style={{ marginLeft: '20px' }}>
                       <CountryDropdown /></div>
                   <br />
