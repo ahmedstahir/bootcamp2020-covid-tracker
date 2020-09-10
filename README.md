@@ -5,6 +5,7 @@ This is an interactive Corona Virus COVID-19 Tracker that presents data in the f
 The tracker makes use of the following:
 - Component-based development
 - Asynchronous data fetching using `async-await`
+- Context API to maintain global accessibility of data
 - Material-UI with theming
 - Google Maps with customizations
 - [CountUp](https://www.npmjs.com/package/react-countup) library to apply count up transition to numbers
